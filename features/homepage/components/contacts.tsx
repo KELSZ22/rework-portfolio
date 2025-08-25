@@ -54,9 +54,9 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in hearing about new opportunities and
-            exciting projects. Let's discuss how we can work together to bring
-            your ideas to life.
+            I&apos;m always interested in hearing about new opportunities and
+            exciting projects. Let&apos;s discuss how we can work together to
+            bring your ideas to life.
           </p>
         </div>
 
@@ -71,11 +71,11 @@ const Contact = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
               <p className="text-muted-foreground mb-8">
                 Whether you have a project in mind, want to collaborate, or just
-                want to say hello, I'd love to hear from you. Feel free to reach
-                out through any of the channels below.
+                want to say hello, I&apos;d love to hear from you. Feel free to
+                reach out through any of the channels below.
               </p>
             </div>
 

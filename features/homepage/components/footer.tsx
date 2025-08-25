@@ -60,7 +60,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Connect</h4>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                Let's work together on your next project
+                Let&apos;s work together on your next project
               </p>
               <div className="flex space-x-3">
                 <Button
