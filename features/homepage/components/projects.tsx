@@ -1,0 +1,165 @@
+"use client";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+import { useIntersectionObserver } from "../../../hooks/use-inter-section-observer";
+
+const Projects = () => {
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.1 });
+
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and real-time inventory tracking.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "Task Management App",
+      description:
+        "A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
+      technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "Weather Dashboard",
+      description:
+        "Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop",
+      technologies: ["Vue.js", "Chart.js", "OpenWeather API"],
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "A responsive portfolio website showcasing modern design principles and smooth animations built with React and Framer Motion.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+      technologies: ["React", "Framer Motion", "Tailwind CSS"],
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "Social Media Analytics",
+      description:
+        "Advanced analytics dashboard for social media management with data visualization and automated reporting features.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+      technologies: ["React", "D3.js", "Python", "FastAPI"],
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "Learning Management System",
+      description:
+        "Comprehensive LMS platform with course creation, student progress tracking, and interactive learning modules.",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
+      technologies: ["Angular", "Spring Boot", "PostgreSQL"],
+      github: "#",
+      live: "#",
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-6" ref={elementRef}>
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${
+            isVisible
+              ? "animate-fade-in opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            My{" "}
+            <span className="gradient-primary bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Here are some of my recent projects that showcase my skills in web
+            development, design, and problem-solving. Each project represents a
+            unique challenge and learning experience.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className={`gradient-card shadow-card hover:shadow-glow transition-all duration-700 border-border/50 overflow-hidden group ${
+                isVisible
+                  ? "animate-fade-in opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-smooth group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+              </div>
+
+              <CardHeader>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+              </CardHeader>
+
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, techIndex) => (
+                    <Badge
+                      key={techIndex}
+                      variant="secondary"
+                      className="text-xs bg-secondary/50"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="flex gap-2 pt-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="flex-1 hover:shadow-glow transition-smooth"
+                  >
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="flex-1 gradient-primary shadow-hero hover:shadow-glow transition-smooth"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Live Demo
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
