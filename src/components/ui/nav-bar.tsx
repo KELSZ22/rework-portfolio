@@ -141,7 +141,7 @@ export default function Navbar() {
                   Projects
                 </button>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <BookOpenIcon className="h-6 w-6" />
                 <Link
                   href="/blog"
@@ -150,8 +150,8 @@ export default function Navbar() {
                 >
                   Blog
                 </Link>
-              </div>
-              <div className="flex items-center gap-2">
+              </div> */}
+              {/* <div className="flex items-center gap-2">
                 <BriefcaseIcon className="h-6 w-6" />
                 <Link
                   href="/services"
@@ -160,7 +160,7 @@ export default function Navbar() {
                 >
                   Services
                 </Link>
-              </div>
+              </div> */}
               <div className="flex items-center gap-2">
                 <ContactIcon className="h-6 w-6" />
                 <button
@@ -270,7 +270,7 @@ export default function Navbar() {
               Projects
             </button>
           </div>
-          <div className="flex items-center ">
+          {/* <div className="flex items-center ">
             <Link
               href="/blog"
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
@@ -281,8 +281,8 @@ export default function Navbar() {
             >
               Blog
             </Link>
-          </div>
-          <div className="flex items-center ">
+          </div> */}
+          {/* <div className="flex items-center ">
             <Link
               href="/services"
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
@@ -293,7 +293,7 @@ export default function Navbar() {
             >
               Services
             </Link>
-          </div>
+          </div> */}
           <div className="flex items-center ">
             <button
               onClick={() =>

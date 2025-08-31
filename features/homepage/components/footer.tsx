@@ -12,9 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              Michael Z. Sabino
-            </h3>
+            <h3 className="text-2xl font-bold">Michael Z. Sabino</h3>
             <p className="text-muted-foreground">
               Computer Engineering graduate & Full Stack Developer passionate
               about creating innovative web solutions and digital experiences.
@@ -44,7 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="text-lg font-semibold">Services</h4>
             <div className="space-y-2 text-muted-foreground">
               <p>Web Development</p>
@@ -53,7 +51,7 @@ const Footer = () => {
               <p>Consulting</p>
               <p>Code Review</p>
             </div>
-          </div>
+          </div> */}
 
           {/* Connect */}
           <div className="space-y-4">
@@ -95,11 +93,11 @@ const Footer = () => {
             <div className="text-muted-foreground text-sm">
               © {currentYear} Michael Z. Sabino. All rights reserved.
             </div>
-            <div className="flex items-center space-x-2 text-muted-foreground text-sm">
+            {/* <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>Made with</span>
               <Heart className="h-4 w-4 text-red-500" />
               <span>using React & TypeScript</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

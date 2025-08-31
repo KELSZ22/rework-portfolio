@@ -22,7 +22,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[85vh] animate-fade-in">
           {/* Left side - Full body image */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-start relative order-first lg:order-first">
+          <div className="lg:col-span-5 flex justify-center lg:justify-start relative order-first lg:order-first mt-32">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 rounded-3xl blur-3xl"></div>
             <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse-glow"></div>
@@ -103,7 +103,7 @@ const HeroSection = () => {
             </div>
 
             {/* Stats or highlights */}
-            <div
+            {/* <div
               className="grid grid-cols-3 gap-6 py-6 animate-slide-in-right"
               style={{ animationDelay: "0.25s" }}
             >
@@ -125,7 +125,7 @@ const HeroSection = () => {
                   Client Satisfaction
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in-right"
@@ -176,7 +176,10 @@ const HeroSection = () => {
                 size="icon"
                 className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
                 onClick={() =>
-                  window.open("https://linkedin.com/in/michaelsabino", "_blank")
+                  window.open(
+                    "https://www.linkedin.com/in/michael-sabino-b0bab02b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    "_blank"
+                  )
                 }
               >
                 <Linkedin className="h-6 w-6" />
@@ -186,7 +189,7 @@ const HeroSection = () => {
                 size="icon"
                 className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
                 onClick={() =>
-                  (window.location.href = "mailto:michael.sabino@email.com")
+                  (window.location.href = "mailto:michaels6355@gmail.com")
                 }
               >
                 <Mail className="h-6 w-6" />

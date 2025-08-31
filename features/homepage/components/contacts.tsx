@@ -20,14 +20,14 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "michael.sabino@email.com",
-      link: "mailto:michael.sabino@email.com",
+      value: "michaels6355@gmail.com",
+      link: "mailto:michaels6355@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      value: "+63 (917) 123-4567",
-      link: "tel:+639171234567",
+      value: "+63 9358693624", // TODO: Change to my phone number
+      link: "tel:+639358693624", // TODO: Change to my phone number
     },
     {
       icon: <MapPin className="h-6 w-6" />,
@@ -47,9 +47,7 @@ const Contact = () => {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="gradient-primary ">Touch</span>
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             I&apos;m always interested in hearing about new opportunities and
             exciting projects. Let&apos;s discuss how we can work together to
@@ -144,14 +142,14 @@ const Contact = () => {
                     <div className="space-y-2">
                       <label className="text-sm font-medium">First Name</label>
                       <Input
-                        placeholder="John"
+                        placeholder="Michael"
                         className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Last Name</label>
                       <Input
-                        placeholder="Doe"
+                        placeholder="Sabino"
                         className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
                       />
                     </div>
@@ -161,7 +159,7 @@ const Contact = () => {
                     <label className="text-sm font-medium">Email</label>
                     <Input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="michael.sabino@email.com"
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
                     />
                   </div>
@@ -169,7 +167,7 @@ const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Subject</label>
                     <Input
-                      placeholder="Project Collaboration"
+                      placeholder="New Project Collaboration"
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
                     />
                   </div>
@@ -177,7 +175,7 @@ const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Message</label>
                     <Textarea
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about your new project..."
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth min-h-[120px]"
                     />
                   </div>

@@ -7,58 +7,85 @@ import { Download, Calendar, MapPin } from "lucide-react";
 const Resume = () => {
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
-      description:
-        "Lead development of scalable web applications serving 100k+ users. Implemented microservices architecture and improved system performance by 40%.",
-      achievements: [
-        "Led a team of 5 developers",
-        "Reduced load times by 40%",
-        "Implemented CI/CD pipelines",
-      ],
+      title: "Full Stack Developer",
+      company: "Springboard Philippines",
+      period: "2025 - Present",
+      location: "Philippines",
+      // description:
+      //   "Lead development of scalable web applications serving 100k+ users. Implemented microservices architecture and improved system performance by 40%.",
+      // achievements: [
+      //   "Led a team of 5 developers",
+      //   "Reduced load times by 40%",
+      //   "Implemented CI/CD pipelines",
+      // ],
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Innovations Inc",
-      period: "2020 - 2022",
-      location: "Remote",
-      description:
-        "Developed responsive web applications using React and TypeScript. Collaborated with design teams to create pixel-perfect user interfaces.",
-      achievements: [
-        "Built 15+ React applications",
-        "Improved user engagement by 25%",
-        "Mentored junior developers",
-      ],
+      title: "Intern Full Stack Developer",
+      company: "Negosyante I.T Solutions Corp., 2024",
+      period: "2024",
+      location: "Philippines",
+      // description:
+      //   "Developed responsive web applications using React and TypeScript. Collaborated with design teams to create pixel-perfect user interfaces.",
+      // achievements: [
+      //   "Built 15+ React applications",
+      //   "Improved user engagement by 25%",
+      //   "Mentored junior developers",
+      // ],
     },
     {
-      title: "Web Developer",
-      company: "StartupXYZ",
-      period: "2019 - 2020",
-      location: "New York, NY",
-      description:
-        "Full-stack development of MVP products. Worked directly with founders to translate business requirements into technical solutions.",
-      achievements: [
-        "Launched 3 successful products",
-        "Achieved 99.9% uptime",
-        "Built scalable infrastructure",
-      ],
+      title: "Intern Java Developer",
+      company: "Intellyx ICT",
+      period: "2020",
+      location: "Philippines",
+      // description:
+      //   "Full-stack development of MVP products. Worked directly with founders to translate business requirements into technical solutions.",
+      // achievements: [
+      //   "Launched 3 successful products",
+      //   "Achieved 99.9% uptime",
+      //   "Built scalable infrastructure",
+      // ],
+    },
+    {
+      title: "Intern Software Developer",
+      company: "First Academy of Computer Arts",
+      period: "2020",
+      location: "Philippines",
+      // description:
+      //   "Full-stack development of MVP products. Worked directly with founders to translate business requirements into technical solutions.",
+      // achievements: [
+      //   "Launched 3 successful products",
+      //   "Achieved 99.9% uptime",
+      //   "Built scalable infrastructure",
+      // ],
     },
   ];
 
   const education = [
     {
       degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
+      school: "Universidad De Manila",
       period: "2015 - 2019",
-      location: "California, USA",
+      location: "Philippines",
     },
     {
-      degree: "Full Stack Web Development Bootcamp",
-      school: "CodeAcademy Pro",
+      degree: "ICT (Information Communication Technology)",
+      school: "Arellano University",
       period: "2018",
-      location: "Online",
+      location: "Philippines",
+    },
+    {
+      degree:
+        "Java Programming NC III, Developing Designs for User Interface, Developing Designs for User Experience",
+      school: "TESDA (Technical Education and Skills Development Authority)",
+      period: "2022",
+      location: "Philippines",
+    },
+    {
+      degree:
+        "Frontend Fundamentals Bootcamp, Data Analytics Fundamentals Bootcamp",
+      school: "One Code Camp",
+      period: "2024",
+      location: "Philippines",
     },
   ];
 
@@ -67,34 +94,50 @@ const Resume = () => {
     "TypeScript",
     "React",
     "Next.js",
-    "Vue.js",
     "Node.js",
     "Python",
-    "Django",
-    "PostgreSQL",
     "MongoDB",
-    "AWS",
-    "Docker",
     "Git",
     "Figma",
     "Tailwind CSS",
     "GraphQL",
     "REST APIs",
-    "Agile",
+    "Java",
+    "PHP",
+    "Laravel",
+    "Node.js",
+    "MySQL",
+    "PostgreSQL",
+    "SQLite",
+    "MongoDB",
+    "React Native",
+    "Cordova",
+    "Ionic",
+  ];
+  const achievements = [
+    "Tesda Java Programming (NC III) batch 3: Top 1",
+    "1st year Dean's Lister",
+    "Senior High School with Honors",
   ];
 
   return (
     <section id="resume" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="gradient-primary">Resume</span>
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">My Resume</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             A comprehensive overview of my professional experience, education,
             and skills that showcase my journey as a developer.
           </p>
-          <Button className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth">
+          <Button
+            className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth"
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1xA6uZ1OkXM4XZyBl3ovG4UHxDi5MnjbF/view?usp=sharing",
+                "_blank"
+              )
+            }
+          >
             <Download className="h-4 w-4 mr-2" />
             Download PDF
           </Button>
@@ -132,10 +175,8 @@ const Resume = () => {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4">
-                        {exp.description}
-                      </p>
+                    {/* <CardContent>
+                      <p className="text-muted-foreground">{exp.description}</p>
                       <div className="space-y-2">
                         <h4 className="font-medium text-sm">
                           Key Achievements:
@@ -152,7 +193,7 @@ const Resume = () => {
                           ))}
                         </ul>
                       </div>
-                    </CardContent>
+                    </CardContent> */}
                   </Card>
                 ))}
               </div>
@@ -190,13 +231,14 @@ const Resume = () => {
           </div>
 
           {/* Skills */}
-          <div className="animate-slide-up" style={{ animationDelay: "0.6s" }}>
-            <Card className="gradient-card shadow-card border-border/50 sticky top-24">
-              <CardHeader>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
+            <Card className="gradient-card ">
+              {/* <CardHeader>
                 <CardTitle className="text-2xl">
                   Skills & Technologies
                 </CardTitle>
-              </CardHeader>
+              </CardHeader> */}
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill, index) => (
@@ -206,6 +248,29 @@ const Resume = () => {
                       className="bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
                     >
                       {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <h3 className="text-2xl font-bold mb-6">Achievements</h3>
+
+            <Card className="gradient-card shadow-card border-border/50 ">
+              {/* <CardHeader>
+                <CardTitle className="text-2xl">
+                  Skills & Technologies
+                </CardTitle>
+              </CardHeader> */}
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {achievements.map((achievement, index) => (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
+                    >
+                      {achievement}
                     </Badge>
                   ))}
                 </div>
