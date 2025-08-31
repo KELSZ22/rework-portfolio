@@ -88,10 +88,7 @@ const Resume = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Resume
-            </span>
+            My <span className="gradient-primary">Resume</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             A comprehensive overview of my professional experience, education,

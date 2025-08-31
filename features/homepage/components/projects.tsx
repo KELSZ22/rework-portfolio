@@ -83,10 +83,7 @@ const Projects = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Projects
-            </span>
+            My <span className="gradient-primary">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills in web

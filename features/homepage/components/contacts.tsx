@@ -48,10 +48,7 @@ const Contact = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Touch
-            </span>
+            Get In <span className="gradient-primary ">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             I&apos;m always interested in hearing about new opportunities and
