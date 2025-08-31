@@ -11,6 +11,8 @@ import {
   FolderIcon,
   HomeIcon,
   InfoIcon,
+  BookOpenIcon,
+  BriefcaseIcon,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -85,53 +87,93 @@ export default function Navbar() {
             <div className="grid gap-2 p-6 z-[9999] mt-10">
               <div className="flex items-center gap-2">
                 <HomeIcon className="h-6 w-6" />
-                <Link
-                  href="#"
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("home")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    setIsMenuOpen(false);
+                  }}
                   className="flex w-full items-center py-2 text-lg font-semibold"
-                  prefetch={false}
                 >
                   Home
-                </Link>
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <InfoIcon className="h-6 w-6" />
-                <Link
-                  href="#"
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    setIsMenuOpen(false);
+                  }}
                   className="flex w-full items-center py-2 text-lg font-semibold"
-                  prefetch={false}
                 >
                   About
-                </Link>
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <FileIcon className="h-6 w-6" />
-                <Link
-                  href="#"
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("resume")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    setIsMenuOpen(false);
+                  }}
                   className="flex w-full items-center py-2 text-lg font-semibold"
-                  prefetch={false}
                 >
                   Resume
-                </Link>
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <FolderIcon className="h-6 w-6" />
-                <Link
-                  href="#"
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("projects")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    setIsMenuOpen(false);
+                  }}
                   className="flex w-full items-center py-2 text-lg font-semibold"
-                  prefetch={false}
                 >
                   Projects
+                </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <BookOpenIcon className="h-6 w-6" />
+                <Link
+                  href="/blog"
+                  className="flex w-full items-center py-2 text-lg font-semibold"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <BriefcaseIcon className="h-6 w-6" />
+                <Link
+                  href="/services"
+                  className="flex w-full items-center py-2 text-lg font-semibold"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
                 </Link>
               </div>
               <div className="flex items-center gap-2">
                 <ContactIcon className="h-6 w-6" />
-                <Link
-                  href="#"
+                <button
+                  onClick={() => {
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    setIsMenuOpen(false);
+                  }}
                   className="flex w-full items-center py-2 text-lg font-semibold"
-                  prefetch={false}
                 >
                   Contact
-                </Link>
+                </button>
               </div>
 
               <div className="flex  ">
@@ -164,70 +206,109 @@ export default function Navbar() {
         </Link> */}
         <nav className="ml-auto hidden lg:flex gap-6 items-center">
           <div className="flex items-center ">
-            <Link
-              href="#"
+            <button
+              onClick={() =>
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`group inline-flex h-9 w-max items-center justify-center rounded-md gap-2 px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                 isScrolled
                   ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
                   : "text-foreground hover:text-accent-foreground"
               }`}
-              prefetch={false}
             >
               Home
-            </Link>
+            </button>
           </div>
 
           <div className="flex items-center ">
-            <Link
-              href="#"
+            <button
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                 isScrolled
                   ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
                   : "text-foreground hover:text-accent-foreground"
               }`}
-              prefetch={false}
             >
               About
-            </Link>
+            </button>
           </div>
           <div className="flex items-center ">
-            <Link
-              href="#"
+            <button
+              onClick={() =>
+                document
+                  .getElementById("resume")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                 isScrolled
                   ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
                   : "text-foreground hover:text-accent-foreground"
               }`}
-              prefetch={false}
             >
               Resume
-            </Link>
+            </button>
           </div>
           <div className="flex items-center ">
-            <Link
-              href="#"
+            <button
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                 isScrolled
                   ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
                   : "text-foreground hover:text-accent-foreground"
               }`}
-              prefetch={false}
             >
               Projects
-            </Link>
+            </button>
           </div>
           <div className="flex items-center ">
             <Link
-              href="#"
+              href="/blog"
               className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                 isScrolled
                   ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
                   : "text-foreground hover:text-accent-foreground"
               }`}
-              prefetch={false}
+            >
+              Blog
+            </Link>
+          </div>
+          <div className="flex items-center ">
+            <Link
+              href="/services"
+              className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                isScrolled
+                  ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
+                  : "text-foreground hover:text-accent-foreground"
+              }`}
+            >
+              Services
+            </Link>
+          </div>
+          <div className="flex items-center ">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                isScrolled
+                  ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
+                  : "text-foreground hover:text-accent-foreground"
+              }`}
             >
               Contact
-            </Link>
+            </button>
           </div>
 
           <Button
@@ -266,25 +347,6 @@ function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  );
-}
-
-function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
     </svg>
   );
 }

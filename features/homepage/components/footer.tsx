@@ -13,11 +13,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              John Doe
+              Michael Z. Sabino
             </h3>
             <p className="text-muted-foreground">
-              Full Stack Developer passionate about creating beautiful,
-              functional digital experiences.
+              Computer Engineering graduate & Full Stack Developer passionate
+              about creating innovative web solutions and digital experiences.
             </p>
           </div>
 
@@ -93,7 +93,7 @@ const Footer = () => {
         <div className="border-t border-border/50 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Michael Z. Sabino. All rights reserved.
             </div>
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>Made with</span>

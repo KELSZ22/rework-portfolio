@@ -86,7 +86,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
             <Card
               key={categoryIndex}
@@ -126,7 +126,7 @@ const About = () => {
               </CardContent>
             </Card>
           ))}
-          <div className="  col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2 xl:col-span-2">
             <Card
               className={`gradient-card shadow-card border-border/50 transition-all duration-700 ${
                 isVisible
@@ -140,15 +140,21 @@ const About = () => {
                   <div>
                     <h3 className="text-2xl font-bold mb-4">My Journey</h3>
                     <p className="text-muted-foreground mb-4 text-justify">
-                      I&apos;m Michael Z. Sabino, a recent computer engineering
-                      graduate with a strong interest in software development
-                      and programming. I gained hands-on experience as a
-                      full-stack developer during my recent OJT, working on
-                      various projects utilizing HTML, CSS, JavaScript, Java,
-                      PHP, Laravel, and more. This year, I achieved my dream of
-                      becoming a software developer, and with dedication to
-                      problem-solving, I&apos;m eager to contribute fresh ideas
-                      and creativity to the tech field.
+                      I&apos;m Michael Z. Sabino, a passionate computer
+                      engineering graduate with a strong foundation in software
+                      development and web technologies. During my academic
+                      journey and professional training as a full-stack
+                      developer, I&apos;ve cultivated expertise in modern web
+                      technologies including React, Next.js, JavaScript,
+                      TypeScript, PHP, Laravel, and various database systems.
+                    </p>
+                    <p className="text-muted-foreground mb-4 text-justify">
+                      My experience spans frontend development with responsive
+                      design principles, backend API development, and database
+                      optimization. I&apos;m passionate about creating seamless
+                      user experiences and writing clean, maintainable code. I
+                      thrive on solving complex problems and turning innovative
+                      ideas into functional digital solutions.
                     </p>
                   </div>
                 </div>

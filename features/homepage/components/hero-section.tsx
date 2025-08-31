@@ -14,41 +14,126 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden mt-20 lg:mt-0"
-      // style={{
-      //   backgroundImage: `url(${heroImage})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundAttachment: "fixed",
-      // }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-background/90"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] animate-fade-in">
-          {/* Left side - Text content */}
-          <div className="space-y-8 text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[85vh] animate-fade-in">
+          {/* Left side - Full body image */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-start relative order-first lg:order-first">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 rounded-3xl blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse-glow"></div>
+            <div
+              className="absolute bottom-0 right-0 w-24 h-24 bg-accent/30 rounded-full blur-xl animate-float"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-secondary/15 rounded-full blur-2xl animate-bounce-slow"
+              style={{ animationDelay: "2s" }}
+            ></div>
+
+            {/* Full body image container */}
+            <div
+              className="relative group animate-scale-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+
+              {/* Image */}
+              <div className="relative z-10 bg-gradient-to-b from-primary/5 to-accent/5 rounded-2xl p-4 backdrop-blur-sm border border-primary/10">
+                <img
+                  src={"/michaelpogi.png"}
+                  alt="Michael Z. Sabino - Full Stack Developer"
+                  className="w-full h-auto max-w-sm mx-auto object-cover object-top rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:shadow-hero"
+                  style={{
+                    aspectRatio: "3/4",
+                    minHeight: "400px",
+                    maxHeight: "600px",
+                  }}
+                />
+
+                {/* Floating elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-bounce opacity-70"></div>
+                <div
+                  className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent rounded-full animate-pulse opacity-60"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - Text content */}
+          <div className="lg:col-span-7 space-y-8 text-center lg:text-left order-last lg:order-last lg:pl-8">
             <div className="space-y-6">
-              <div className="space-y-2">
-                <p className="text-lg text-primary font-medium">
+              <div className="space-y-3">
+                <p className="text-xl text-primary font-medium animate-slide-in-right">
                   Hello, I&apos;m
                 </p>
-                <h1 className="text-5xl md:text-6xl font-bold hero-text leading-tight">
+                <h1
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold hero-text leading-tight animate-slide-in-right"
+                  style={{ animationDelay: "0.1s" }}
+                >
                   Michael Z. Sabino
                 </h1>
+                <div
+                  className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto lg:mx-0 animate-slide-in-right"
+                  style={{ animationDelay: "0.15s" }}
+                ></div>
               </div>
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                I’m a web developer who loves building sleek, functional
-                websites. Whether it’s a custom project, I’m here to bring your
-                ideas to life. Let’s create something great!
+              <p
+                className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-slide-in-right"
+                style={{ animationDelay: "0.2s" }}
+              >
+                Passionate{" "}
+                <span className="text-primary font-semibold">
+                  Full Stack Developer
+                </span>{" "}
+                crafting exceptional digital experiences. I transform innovative
+                ideas into
+                <span className="text-accent font-semibold">
+                  {" "}
+                  scalable web solutions
+                </span>{" "}
+                that make a difference.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Stats or highlights */}
+            <div
+              className="grid grid-cols-3 gap-6 py-6 animate-slide-in-right"
+              style={{ animationDelay: "0.25s" }}
+            >
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-primary">2+</div>
+                <div className="text-sm text-muted-foreground">
+                  Years Experience
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-primary">15+</div>
+                <div className="text-sm text-muted-foreground">
+                  Projects Done
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">
+                  Client Satisfaction
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in-right"
+              style={{ animationDelay: "0.3s" }}
+            >
               <Button
                 size="lg"
-                className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth px-8"
+                className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth px-8 py-4 text-lg"
                 onClick={() =>
                   document
                     .getElementById("projects")
@@ -60,7 +145,7 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth px-8"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth px-8 py-4 text-lg"
                 onClick={() =>
                   document
                     .getElementById("contact")
@@ -72,68 +157,59 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 pt-4">
+            <div
+              className="flex space-x-6 pt-4 justify-center lg:justify-start animate-slide-in-right"
+              style={{ animationDelay: "0.4s" }}
+            >
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:shadow-glow transition-smooth"
+                className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
+                onClick={() =>
+                  window.open("https://github.com/michaelsabino", "_blank")
+                }
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-6 w-6" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:shadow-glow transition-smooth"
+                className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
+                onClick={() =>
+                  window.open("https://linkedin.com/in/michaelsabino", "_blank")
+                }
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-6 w-6" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:shadow-glow transition-smooth"
+                className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
+                onClick={() =>
+                  (window.location.href = "mailto:michael.sabino@email.com")
+                }
               >
-                <Mail className="h-5 w-5" />
+                <Mail className="h-6 w-6" />
               </Button>
             </div>
-          </div>
-
-          {/* Right side - Author photo */}
-          <div className="flex justify-center ">
-            <div className="absolute w-[800px] h-[800px] bg-primary/10 rounded-full z-[-1]"></div>
-            <img
-              src={"/michaelpogi.png"}
-              alt="Michael Z. Sabino - Full Stack Developer"
-            />
           </div>
         </div>
-        {/* Company logos
-        <div className=" animate-slide-up" style={{ animationDelay: "0.5s" }}>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 bg-amber-100">
-            <div className="text-2xl font-bold text-muted-foreground">Meta</div>
-            <div className="text-2xl font-bold text-muted-foreground">
-              Google
-            </div>
-            <div className="text-2xl font-bold text-muted-foreground">
-              Microsoft
-            </div>
-            <div className="text-2xl font-bold text-muted-foreground">
-              Amazon
-            </div>
-            <div className="text-2xl font-bold text-muted-foreground">
-              Apple
-            </div>
+
+        {/* Enhanced scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-sm text-muted-foreground animate-fade-in">
+              Scroll Down
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={scrollToAbout}
+              className="hover:shadow-glow transition-smooth rounded-full border border-primary/20 hover:border-primary/40"
+            >
+              <ArrowDown className="h-5 w-5 animate-bounce" />
+            </Button>
           </div>
-        </div> */}
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={scrollToAbout}
-            className="hover:shadow-glow transition-smooth"
-          >
-            <ArrowDown className="h-6 w-6" />
-          </Button>
         </div>
       </div>
     </section>

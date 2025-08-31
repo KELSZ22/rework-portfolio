@@ -20,19 +20,19 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "john.doe@example.com",
-      link: "mailto:john.doe@example.com",
+      value: "michael.sabino@email.com",
+      link: "mailto:michael.sabino@email.com",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+63 (917) 123-4567",
+      link: "tel:+639171234567",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Philippines",
       link: "#",
     },
   ];
@@ -70,9 +70,10 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
               <p className="text-muted-foreground mb-8">
-                Whether you have a project in mind, want to collaborate, or just
-                want to say hello, I&apos;d love to hear from you. Feel free to
-                reach out through any of the channels below.
+                I&apos;m always excited to discuss new opportunities, innovative
+                projects, or potential collaborations. Whether you&apos;re
+                looking for a developer to bring your ideas to life or want to
+                chat about technology, feel free to reach out!
               </p>
             </div>
 
