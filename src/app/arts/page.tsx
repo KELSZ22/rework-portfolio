@@ -218,7 +218,6 @@ export default function ArtsPage() {
   const categories = [
     "All",
     "Digital Art",
-    "Motion Graphics",
     "Abstract",
     "Illustration",
     "3D Art",
