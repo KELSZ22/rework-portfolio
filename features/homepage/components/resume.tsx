@@ -62,9 +62,9 @@ const Resume = () => {
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
+      degree: "Bachelor of Science in Computer Engineering",
       school: "Universidad De Manila",
-      period: "2015 - 2019",
+      period: "2021",
       location: "Philippines",
     },
     {

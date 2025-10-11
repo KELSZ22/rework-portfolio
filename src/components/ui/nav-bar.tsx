@@ -11,9 +11,9 @@ import {
   FolderIcon,
   HomeIcon,
   InfoIcon,
-  BookOpenIcon,
-  BriefcaseIcon,
+  PaletteIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,10 +80,16 @@ export default function Navbar() {
             </SheetTrigger>
           )}
           <SheetContent side="left">
-            {/* <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-              <MountainIcon className="h-6 w-6" />
-              <span className="sr-only">Acme Inc</span>
-            </Link> */}
+            <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+              <Image
+                src="/icon/kelsz.dev.png"
+                alt="logo"
+                className="h-10 w-10"
+                width={100}
+                height={100}
+              />
+              <span className="sr-only text-2xl ">kelsz.dev</span>
+            </Link>
             <div className="grid gap-2 p-6 z-[9999] mt-10">
               <div className="flex items-center gap-2">
                 <HomeIcon className="h-6 w-6" />
@@ -140,6 +146,18 @@ export default function Navbar() {
                 >
                   Projects
                 </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <PaletteIcon className="h-6 w-6" />
+                <Link
+                  href="/arts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center py-2 text-lg font-semibold"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Arts
+                </Link>
               </div>
               {/* <div className="flex items-center gap-2">
                 <BookOpenIcon className="h-6 w-6" />
@@ -200,10 +218,17 @@ export default function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
-        {/* <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-          <MountainIcon className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </Link> */}
+        <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+          <Image
+            src="/icon/kelsz.dev.png"
+            alt="logo"
+            className="h-6 w-6"
+            width={32}
+            height={32}
+          />
+          <span className="sr-only">kelsz.dev</span>
+        </Link>
+
         <nav className="ml-auto hidden lg:flex gap-6 items-center">
           <div className="flex items-center ">
             <button
@@ -269,6 +294,20 @@ export default function Navbar() {
             >
               Projects
             </button>
+          </div>
+          <div className="flex items-center ">
+            <Link
+              href="/arts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group inline-flex h-9 w-max items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                isScrolled
+                  ? "bg-background hover:bg-accent hover:text-accent-foreground text-foreground"
+                  : "text-foreground hover:text-accent-foreground"
+              }`}
+            >
+              Arts
+            </Link>
           </div>
           {/* <div className="flex items-center ">
             <Link
