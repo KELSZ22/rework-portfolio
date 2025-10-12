@@ -4,7 +4,6 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
 import {
   ContactIcon,
   FileIcon,
@@ -17,7 +16,6 @@ import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -26,31 +24,13 @@ export default function Navbar() {
       setIsScrolled(scrollTop > 20);
     };
 
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setIsDarkMode(savedTheme === "dark" || (!savedTheme && prefersDark));
+    // Force dark mode
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    // Apply theme to document
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
 
   const handleMenuClick = () => {
     setIsMenuOpen(true);
@@ -191,28 +171,6 @@ export default function Navbar() {
                 >
                   Contact
                 </button>
-              </div>
-
-              <div className="flex  ">
-                <Button
-                  variant="ghost"
-                  size="default"
-                  onClick={toggleTheme}
-                  className="w-full justify-start p-0"
-                  aria-label="Toggle theme"
-                >
-                  {isDarkMode ? (
-                    <>
-                      <Sun className="h-6 w-6 mr-2" />
-                      Light Mode
-                    </>
-                  ) : (
-                    <>
-                      <Moon className="h-6 w-6 mr-2" />
-                      Dark Mode
-                    </>
-                  )}
-                </Button>
               </div>
             </div>
           </SheetContent>
@@ -362,20 +320,6 @@ export default function Navbar() {
               Contact
             </button>
           </div>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="ml-4 h-9 w-9 rounded-md border-border bg-background/50 hover:bg-accent"
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? (
-              <Sun className="h-4 w-4 text-foreground" />
-            ) : (
-              <Moon className="h-4 w-4 text-foreground" />
-            )}
-          </Button>
         </nav>
       </div>
     </header>

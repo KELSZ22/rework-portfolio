@@ -60,7 +60,7 @@ const About = () => {
     },
     {
       icon: <Database className="h-8 w-8" />,
-      title: "Database & DevOps",
+      title: "Database",
       description:
         "Designing efficient database systems and implementing modern development workflows.",
       // expertise: [
