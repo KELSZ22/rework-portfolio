@@ -84,9 +84,8 @@ export default function Navbar() {
               <Image
                 src="/icon/kelsz.dev.png"
                 alt="logo"
-                className="h-10 w-10"
-                width={100}
-                height={100}
+                width={200}
+                height={200}
               />
               <span className="sr-only text-2xl ">kelsz.dev</span>
             </Link>
@@ -218,13 +217,27 @@ export default function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
+
+        {/* Mobile Logo - Right Side */}
+        <Link href="#" className="ml-auto lg:hidden" prefetch={false}>
+          <Image
+            src="/icon/kelsz.dev.png"
+            alt="logo"
+            className="h-12 w-12"
+            width={48}
+            height={48}
+          />
+          <span className="sr-only">kelsz.dev</span>
+        </Link>
+
+        {/* Desktop Logo - Left Side */}
         <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
           <Image
             src="/icon/kelsz.dev.png"
             alt="logo"
-            className="h-6 w-6"
-            width={32}
-            height={32}
+            className="h-20 w-20"
+            width={200}
+            height={200}
           />
           <span className="sr-only">kelsz.dev</span>
         </Link>
