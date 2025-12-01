@@ -133,7 +133,7 @@ const Resume = () => {
             className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1xA6uZ1OkXM4XZyBl3ovG4UHxDi5MnjbF/view?usp=sharing",
+                "https://drive.google.com/file/d/1EQiteJB3ZfdJcVtaFGv1HiAPA_udctr3/view?usp=sharing",
                 "_blank"
               )
             }

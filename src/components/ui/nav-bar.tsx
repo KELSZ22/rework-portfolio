@@ -1,8 +1,9 @@
 "use client";
 
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
   ContactIcon,
@@ -17,6 +18,7 @@ import Image from "next/image";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +46,31 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+      <div className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6">
+        {/* Logo - Left Side */}
+        <Link
+          href="/"
+          onClick={(e) => {
+            // If on home page, scroll to top, otherwise navigate
+            if (pathname === "/") {
+              e.preventDefault();
+              document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="flex items-center"
+          prefetch={false}
+        >
+          <Image
+            src="/icon/kelsz.dev.png"
+            alt="logo"
+            className="h-12 w-12 lg:h-20 lg:w-20"
+            width={80}
+            height={80}
+          />
+          <span className="sr-only">kelsz.dev</span>
+        </Link>
+
+        {/* Burger Menu - Right Side (Mobile) */}
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           {!isMenuOpen && (
             <SheetTrigger asChild>
@@ -60,7 +86,8 @@ export default function Navbar() {
             </SheetTrigger>
           )}
           <SheetContent side="left">
-            <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <Link href="/" className="mr-6 mb-6 flex" prefetch={false}>
               <Image
                 src="/icon/kelsz.dev.png"
                 alt="logo"
@@ -69,7 +96,7 @@ export default function Navbar() {
               />
               <span className="sr-only text-2xl ">kelsz.dev</span>
             </Link>
-            <div className="grid gap-2 p-6 z-[9999] mt-10">
+            <div className="grid gap-2 p-6 z-[9999]">
               <div className="flex items-center gap-2">
                 <HomeIcon className="h-6 w-6" />
                 <button
@@ -176,31 +203,8 @@ export default function Navbar() {
           </SheetContent>
         </Sheet>
 
-        {/* Mobile Logo - Right Side */}
-        <Link href="#" className="ml-auto lg:hidden" prefetch={false}>
-          <Image
-            src="/icon/kelsz.dev.png"
-            alt="logo"
-            className="h-12 w-12"
-            width={48}
-            height={48}
-          />
-          <span className="sr-only">kelsz.dev</span>
-        </Link>
-
-        {/* Desktop Logo - Left Side */}
-        <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-          <Image
-            src="/icon/kelsz.dev.png"
-            alt="logo"
-            className="h-20 w-20"
-            width={200}
-            height={200}
-          />
-          <span className="sr-only">kelsz.dev</span>
-        </Link>
-
-        <nav className="ml-auto hidden lg:flex gap-6 items-center">
+        {/* Desktop Navigation - Right Side */}
+        <nav className="hidden lg:flex gap-6 items-center">
           <div className="flex items-center ">
             <button
               onClick={() =>

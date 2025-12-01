@@ -166,7 +166,7 @@ const HeroSection = () => {
                 size="icon"
                 className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
                 onClick={() =>
-                  window.open("https://github.com/michaelsabino", "_blank")
+                  window.open("https://github.com/KELSZ22", "_blank")
                 }
               >
                 <Github className="h-6 w-6" />
