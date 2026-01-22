@@ -11,7 +11,7 @@ export const projects: Project[] = [
     image: "/app-images/ace-agency.png",
     technologies: ["Next.js", "TypeScript"],
     category: "Web Development",
-    live: "https://ace-delta-self.vercel.app/",
+    live: "https://demo-agency-black.vercel.app/",
   },
   {
     id: 12,
@@ -83,7 +83,8 @@ export const projects: Project[] = [
     image: "/app-images/alphera.png",
     technologies: ["Laravel", "Inertia.js", "React"],
     category: "Web Development",
-    live: "https://weather.kelsz.dev",
+    live: "#",
+    requiresCredentials: true,
   },
   // {
   //   id: 5,
@@ -145,7 +146,8 @@ export const projects: Project[] = [
     image: "/app-images/kp-cms.png",
     technologies: ["Laravel", "Inertia.js", "TypeScript"],
     category: "Web Development",
-    live: "https://chatbot.kelsz.dev",
+    live: "",
+    requiresCredentials: true,
   },
   {
     id: 10,
@@ -157,6 +159,6 @@ export const projects: Project[] = [
     image: "/app-images/kpsf.png",
     technologies: ["Next.js", "TypeScript"],
     category: "Web Development",
-    live: "https://chatbot.kelsz.dev",
+    live: "https://car-deals-store-front.vercel.app/",
   },
 ];
