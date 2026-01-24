@@ -73,19 +73,7 @@ export const projects: Project[] = [
   //   category: "Mobile Development",
   //   live: "https://tindaplus.mytao.id/",
   // },
-  {
-    id: 4,
-    title: "Alphera ERP",
-    description:
-      "Alphera ERP is a streamlined system for sea-based agencies, designed to manage crew applications, records, and workflows efficiently from recruitment to deployment.",
-    longDescription:
-      "A full-featured ERP system built with Laravel Inertia and React. Features include inventory management, accounting, human resources, sales and purchase management, reporting dashboards, and multi-user access control. The system streamlines business operations and provides real-time insights.",
-    image: "/app-images/alphera.png",
-    technologies: ["Laravel", "Inertia.js", "React"],
-    category: "Web Development",
-    live: "#",
-    requiresCredentials: true,
-  },
+
   // {
   //   id: 5,
   //   title: "My Tao App",
@@ -111,19 +99,7 @@ export const projects: Project[] = [
   //   live: "#",
   //   requiresCredentials: true,
   // },
-  {
-    id: 7,
-    title: "Polland Hopia",
-    description:
-      "Polland Hopia is an inventory management system designed to track stock, sales, and supplies efficiently, helping businesses stay organized and maintain smooth operations.",
-    longDescription:
-      "A comprehensive e-commerce platform built with Laravel backend, React frontend, and TanStack for state management. Features include product catalog, shopping cart, order management, payment processing, user authentication, and admin dashboard. The platform provides excellent performance with optimized state management.",
-    image: "/app-images/polland.png",
-    technologies: ["Laravel", "React", "TanStack"],
-    category: "Web Development",
-    live: "#",
-    requiresCredentials: true,
-  },
+
   // {
   //   id: 8,
   //   title: "E Impok App",
@@ -136,29 +112,4 @@ export const projects: Project[] = [
   //   category: "Mobile Development",
   //   live: "https://chatbot.kelsz.dev",
   // },
-  {
-    id: 9,
-    title: "King Panda CMS",
-    description:
-      "King Panda CMS is a content management system for car dealerships, allowing users to manage listings, promotions, and inventory efficiently from a centralized platform.",
-    longDescription:
-      "A robust content management system built with Laravel Inertia and TypeScript. Features include content creation and management, user roles and permissions, media handling, SEO tools, and analytics dashboard. The system leverages TypeScript for type safety and improved developer experience.",
-    image: "/app-images/kp-cms.png",
-    technologies: ["Laravel", "Inertia.js", "TypeScript"],
-    category: "Web Development",
-    live: "",
-    requiresCredentials: true,
-  },
-  {
-    id: 10,
-    title: "King Panda Car Deals",
-    description:
-      "King Panda Car Deals is a car dealership platform that allows users to browse and purchase vehicles online, with features like inventory management, customer inquiries, and appointment scheduling.",
-    longDescription:
-      "A comprehensive car dealership platform built with Next.js and TypeScript. Features include vehicle listings, search and filtering, inventory management, customer inquiries, appointment scheduling, and admin dashboard. The platform provides excellent performance with server-side rendering and type safety.",
-    image: "/app-images/kpsf.png",
-    technologies: ["Next.js", "TypeScript"],
-    category: "Web Development",
-    live: "https://car-deals-store-front.vercel.app/",
-  },
 ];
