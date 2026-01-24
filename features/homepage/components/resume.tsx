@@ -9,7 +9,7 @@ const Resume = () => {
     {
       title: "Full Stack Developer",
       company: "Springboard Philippines",
-      period: "2025 - Present",
+      period: "2025",
       location: "Philippines",
       // description:
       //   "Lead development of scalable web applications serving 100k+ users. Implemented microservices architecture and improved system performance by 40%.",

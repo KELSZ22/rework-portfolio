@@ -3,12 +3,12 @@ import { Project } from "@/components/project-card";
 export const projects: Project[] = [
   {
     id: 2,
-    title: "ACE Agency Website",
+    title: "Agency Website",
     description:
-      "Ace Agency is a job-matching platform where applicants can easily find and apply for jobs, while employers can post openings and inquire directly with qualified candidates.",
+      "Agency is a job-matching platform where applicants can easily find and apply for jobs, while employers can post openings and inquire directly with qualified candidates.",
     longDescription:
       "A comprehensive e-commerce platform built with Next.js and TypeScript. Features include user authentication, product management, shopping cart, order processing, payment integration, and admin dashboard. The platform supports multiple payment methods and includes real-time inventory tracking.",
-    image: "/app-images/ace-agency.png",
+    image: "/app-images/agency.png",
     technologies: ["Next.js", "TypeScript"],
     category: "Web Development",
     live: "https://demo-agency-black.vercel.app/",
@@ -27,15 +27,16 @@ export const projects: Project[] = [
   },
   {
     id: 13,
-    title: "ACE Agency CMS",
+    title: "Agency CMS",
     description:
-      "Ace Agency CMS features a robust role-based access control system, allowing secure management of job postings, employer inquiries, and platform content. It ensures that each user level has the right permissions for efficient and organized workflow.",
+      "Agency CMS features a robust role-based access control system, allowing secure management of job postings, employer inquiries, and platform content. It ensures that each user level has the right permissions for efficient and organized workflow.",
     longDescription:
       "A powerful content management system built with Laravel Inertia and TypeScript. Features include content creation and editing, user management, role-based access control, media library, SEO tools, and analytics dashboard. The system provides an intuitive interface for managing website content and digital assets.",
     image: "/app-images/ace-cms.png",
     technologies: ["Laravel", "Inertia.js", "TypeScript"],
     category: "Web Development",
-    live: "https://ace-cms.kelsz.dev/login",
+    live: "#",
+    requiresCredentials: true,
   },
   {
     id: 11,
@@ -47,7 +48,8 @@ export const projects: Project[] = [
     image: "/app-images/production-budget.png",
     technologies: ["Laravel", "Inertia.js", "TypeScript"],
     category: "Web Development",
-    live: "https://production-budget.kelsz.dev/",
+    live: "#",
+    requiresCredentials: true,
   },
   // {
   //   id: 1,
