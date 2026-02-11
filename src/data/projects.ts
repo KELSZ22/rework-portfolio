@@ -2,6 +2,18 @@ import { Project } from "@/components/project-card";
 
 export const projects: Project[] = [
   {
+    id: 14,
+    title: "Car Deals",
+    description:
+      "Car Deals is a modern car dealership platform for browsing and searching vehicles. Features include filters by type, brand, price range, and location, with a clean grid of available cars, favorites, and detailed listings.",
+    longDescription:
+      "A car marketplace web application with comprehensive search and filter capabilities. Users can search by vehicle type (Sedan, SUV, Coupe), brand (Toyota, BYD, Hyundai), price range, and location (Manila, Cebu, Davao). The platform displays available cars in an intuitive grid with featured listings, wishlist favorites, and detailed view options for each vehicle.",
+    image: "/app-images/car-deals.jpeg",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web Development",
+    live: "https://car-deals-store-front.vercel.app/",
+  },
+  {
     id: 2,
     title: "Agency Website",
     description:
