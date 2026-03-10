@@ -11,7 +11,7 @@ export const projects: Project[] = [
     image: "/app-images/car-deals.jpeg",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Web Development",
-    live: "https://car-deals-store-front.vercel.app/",
+    live: "https://car-deals-front.kelsz.dev/",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: "/app-images/agency.png",
     technologies: ["Next.js", "TypeScript"],
     category: "Web Development",
-    live: "https://demo-agency-black.vercel.app/",
+    live: "https://demo-agency.kelsz.dev/",
   },
   {
     id: 12,
