@@ -4,16 +4,92 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { CheckCircle2, Mail, Phone, MapPin, Send } from "lucide-react";
 import { useIntersectionObserver } from "../../../hooks/use-inter-section-observer";
+import { useMemo, useState } from "react";
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.1 });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    | { state: "idle" }
+    | { state: "submitting" }
+    | { state: "error"; message: string }
+  >({ state: "idle" });
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(
+    "Message sent! I’ll get back to you soon.",
+  );
+
+  const isValid = useMemo(() => {
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim());
+    return (
+      form.firstName.trim().length > 0 &&
+      form.lastName.trim().length > 0 &&
+      emailOk &&
+      form.subject.trim().length > 0 &&
+      form.message.trim().length > 0
+    );
+  }, [form]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
+    if (!isValid || status.state === "submitting") return;
+
+    setStatus({ state: "submitting" });
+    try {
+      const res = await fetch("/api/application", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          firstName: form.firstName.trim(),
+          lastName: form.lastName.trim(),
+          email: form.email.trim(),
+          subject: form.subject.trim(),
+          message: form.message.trim(),
+        }),
+      });
+
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setStatus({ state: "idle" });
+      setSuccessMessage("Message sent! I’ll get back to you soon.");
+      setSuccessModalOpen(true);
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err: unknown) {
+      setStatus({
+        state: "error",
+        message: err instanceof Error ? err.message : "Failed to send message",
+      });
+    }
   };
 
   const contactInfo = [
@@ -137,20 +213,65 @@ const Contact = () => {
                 <CardTitle className="text-2xl">Send a Message</CardTitle>
               </CardHeader>
               <CardContent>
+                <Dialog
+                  open={successModalOpen}
+                  onOpenChange={setSuccessModalOpen}
+                >
+                  <DialogContent className="sm:max-w-md gradient-card shadow-card border-border/50">
+                    <DialogHeader className="items-center text-center">
+                      <div className="mb-2 inline-flex size-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+                        <CheckCircle2 className="size-9 text-primary" />
+                      </div>
+                      <DialogTitle className="text-3xl">
+                        Message sent
+                      </DialogTitle>
+                      <DialogDescription className="text-base leading-relaxed sm:text-lg">
+                        {successMessage}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter className="flex !flex-row flex-nowrap gap-3 justify-stretch sm:!flex-row [&>button]:min-w-0 [&>button]:flex-1">
+                      <Button
+                        type="button"
+                        className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth"
+                        onClick={() => setSuccessModalOpen(false)}
+                      >
+                        Got it
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="border-border/50 bg-secondary/30 hover:bg-secondary/50"
+                        onClick={() => setSuccessModalOpen(false)}
+                      >
+                        Close
+                      </Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">First Name</label>
                       <Input
-                        placeholder="Michael"
+                        placeholder="Enter your first name"
                         className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
+                        value={form.firstName}
+                        onChange={(e) =>
+                          setForm((p) => ({ ...p, firstName: e.target.value }))
+                        }
+                        autoComplete="given-name"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Last Name</label>
                       <Input
-                        placeholder="Sabino"
+                        placeholder="Enter your last name"
                         className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
+                        value={form.lastName}
+                        onChange={(e) =>
+                          setForm((p) => ({ ...p, lastName: e.target.value }))
+                        }
+                        autoComplete="family-name"
                       />
                     </div>
                   </div>
@@ -159,8 +280,13 @@ const Contact = () => {
                     <label className="text-sm font-medium">Email</label>
                     <Input
                       type="email"
-                      placeholder="michael.sabino@email.com"
+                      placeholder="Enter your email"
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm((p) => ({ ...p, email: e.target.value }))
+                      }
+                      autoComplete="email"
                     />
                   </div>
 
@@ -169,6 +295,10 @@ const Contact = () => {
                     <Input
                       placeholder="New Project Collaboration"
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth"
+                      value={form.subject}
+                      onChange={(e) =>
+                        setForm((p) => ({ ...p, subject: e.target.value }))
+                      }
                     />
                   </div>
 
@@ -177,15 +307,26 @@ const Contact = () => {
                     <Textarea
                       placeholder="Tell me about your new project..."
                       className="bg-secondary/50 border-border/50 focus:border-primary transition-smooth min-h-[120px]"
+                      value={form.message}
+                      onChange={(e) =>
+                        setForm((p) => ({ ...p, message: e.target.value }))
+                      }
                     />
                   </div>
 
+                  {status.state === "error" && (
+                    <p className="text-sm text-destructive">{status.message}</p>
+                  )}
+
                   <Button
                     type="submit"
-                    className="w-full gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth"
+                    disabled={!isValid || status.state === "submitting"}
+                    className="w-full gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth disabled:opacity-60"
                   >
                     <Send className="h-4 w-4 mr-2" />
-                    Send Message
+                    {status.state === "submitting"
+                      ? "Sending..."
+                      : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

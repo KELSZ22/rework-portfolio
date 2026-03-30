@@ -127,9 +127,33 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scrollbar-color: transparent transparent;
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  /* Resume galaxy strip: hide scrollbars everywhere (incl. Linux / stubborn WebKit) */
+  .resume-galaxy-scrollport {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    scrollbar-color: transparent transparent !important;
+  }
+  .resume-galaxy-scrollport::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+  .resume-galaxy-scrollport::-webkit-scrollbar-corner {
+    background: transparent !important;
+  }
+  .resume-galaxy-scrollport::-webkit-scrollbar-track,
+  .resume-galaxy-scrollport::-webkit-scrollbar-thumb {
+    background: transparent !important;
   }
 }
 
@@ -258,6 +282,115 @@
 
   .animate-glow-pulse {
     animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+
+  /* Resume — galaxy / constellation timeline */
+  .resume-galaxy-section {
+    background: radial-gradient(
+        ellipse 120% 80% at 50% -10%,
+        rgba(139, 92, 246, 0.14),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 100% 30%,
+        rgba(168, 85, 247, 0.08),
+        transparent 50%
+      ),
+      linear-gradient(180deg, rgb(243 244 246 / 0.95) 0%, rgb(249 250 251) 100%);
+  }
+
+  .dark .resume-galaxy-section {
+    background: radial-gradient(
+        ellipse 100% 70% at 50% 0%,
+        rgba(88, 28, 135, 0.45),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 80% 60% at 0% 80%,
+        rgba(139, 92, 246, 0.18),
+        transparent 55%
+      ),
+      linear-gradient(180deg, #06060c 0%, #0c0c14 45%, #050508 100%);
+  }
+
+  .resume-starfield {
+    background-image: radial-gradient(
+        1px 1px at 8% 12%,
+        rgba(91, 33, 182, 0.35),
+        transparent
+      ),
+      radial-gradient(1px 1px at 22% 38%, rgba(124, 58, 237, 0.28), transparent),
+      radial-gradient(1px 1px at 41% 7%, rgba(109, 40, 217, 0.32), transparent),
+      radial-gradient(1px 1px at 55% 62%, rgba(139, 92, 246, 0.25), transparent),
+      radial-gradient(1px 1px at 71% 18%, rgba(91, 33, 182, 0.3), transparent),
+      radial-gradient(1px 1px at 88% 44%, rgba(124, 58, 237, 0.28), transparent),
+      radial-gradient(1px 1px at 15% 78%, rgba(109, 40, 217, 0.22), transparent),
+      radial-gradient(1px 1px at 33% 91%, rgba(139, 92, 246, 0.26), transparent),
+      radial-gradient(1px 1px at 67% 83%, rgba(91, 33, 182, 0.24), transparent),
+      radial-gradient(1px 1px at 92% 72%, rgba(124, 58, 237, 0.3), transparent),
+      radial-gradient(2px 2px at 48% 48%, rgba(167, 139, 250, 0.35), transparent);
+    background-size: 100% 100%;
+    animation: starfieldShimmer 10s ease-in-out infinite alternate;
+  }
+
+  .dark .resume-starfield {
+    background-image: radial-gradient(
+        1px 1px at 8% 12%,
+        rgba(255, 255, 255, 0.55),
+        transparent
+      ),
+      radial-gradient(1px 1px at 22% 38%, rgba(200, 210, 255, 0.45), transparent),
+      radial-gradient(1px 1px at 41% 7%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(1px 1px at 55% 62%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(1px 1px at 71% 18%, rgba(220, 200, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 88% 44%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(1px 1px at 15% 78%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 33% 91%, rgba(180, 190, 255, 0.4), transparent),
+      radial-gradient(1px 1px at 67% 83%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(1px 1px at 92% 72%, rgba(255, 255, 255, 0.45), transparent),
+      radial-gradient(2px 2px at 48% 48%, rgba(196, 181, 253, 0.35), transparent);
+    opacity: 0.85;
+  }
+
+  .resume-star-node {
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle at 32% 28%,
+      rgb(255 255 255 / 0.95),
+      rgb(196 181 253) 38%,
+      rgb(139 92 246) 72%,
+      rgb(91 33 182) 100%
+    );
+    box-shadow: 0 0 10px 2px rgba(139, 92, 246, 0.65),
+      0 0 24px 6px rgba(168, 85, 247, 0.35),
+      inset 0 0 6px rgba(255, 255, 255, 0.35);
+    animation: starTwinkle 3.2s ease-in-out infinite;
+  }
+
+  .resume-orbit-line {
+    background: linear-gradient(
+      180deg,
+      rgba(139, 92, 246, 0.15) 0%,
+      rgba(168, 85, 247, 0.55) 35%,
+      rgba(139, 92, 246, 0.45) 65%,
+      rgba(139, 92, 246, 0.12) 100%
+    );
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.45);
+  }
+
+  .resume-orbit-line-horizontal {
+    background: linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.12) 0%,
+      rgba(168, 85, 247, 0.55) 35%,
+      rgba(139, 92, 246, 0.45) 65%,
+      rgba(139, 92, 246, 0.12) 100%
+    );
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.45);
   }
 }
 
@@ -394,5 +527,33 @@
   }
   100% {
     box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+  }
+}
+
+@keyframes starfieldShimmer {
+  0% {
+    opacity: 0.42;
+  }
+  100% {
+    opacity: 0.72;
+  }
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  45% {
+    opacity: 0.82;
+    transform: scale(0.92);
+    filter: brightness(1.15);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+    filter: brightness(1.08);
   }
 }
