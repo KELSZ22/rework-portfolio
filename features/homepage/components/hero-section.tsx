@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import {
+  ArrowDown,
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+} from "lucide-react";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -158,7 +165,7 @@ const HeroSection = () => {
 
             {/* Social Links */}
             <div
-              className="flex space-x-6 pt-4 justify-center lg:justify-start animate-slide-in-right"
+              className="flex space-x-6 pt-4 justify-center lg:justify-start animate-slide-in-right  pb-2"
               style={{ animationDelay: "0.4s" }}
             >
               <Button
@@ -178,7 +185,7 @@ const HeroSection = () => {
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/michael-sabino-b0bab02b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -193,6 +200,28 @@ const HeroSection = () => {
                 }
               >
                 <Mail className="h-6 w-6" />
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
+                onClick={() =>
+                  window.open("https://www.facebook.com/Kelsz0910/", "_blank")
+                }
+              >
+                <Facebook className="h-6 w-6" />
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-12 h-12 hover:shadow-glow transition-smooth hover:scale-110 rounded-full border border-primary/20 hover:border-primary/60 hover:bg-primary/10"
+                onClick={() =>
+                  window.open("https://www.instagram.com/kel_sz7/", "_blank")
+                }
+              >
+                <Instagram className="h-6 w-6" />
               </Button>
             </div>
           </div>

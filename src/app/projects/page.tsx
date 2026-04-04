@@ -5,6 +5,7 @@ import { Code, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/projects";
+import Footer from "../../../features/homepage/components/footer";
 
 export default function ProjectsPage() {
   return (
@@ -55,24 +56,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 md:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Interested in Working Together?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            I&apos;m always excited to take on new challenges and create amazing
-            digital experiences.
-          </p>
-          <a
-            href="mailto:michaels6355@gmail.com"
-            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-          >
-            Get in Touch
-          </a>
-        </div>
-      </section>
+      <Footer />
     </main>
   );
 }

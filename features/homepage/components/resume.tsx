@@ -133,8 +133,8 @@ const Resume = () => {
             className="gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1EQiteJB3ZfdJcVtaFGv1HiAPA_udctr3/view?usp=sharing",
-                "_blank"
+                "https://drive.google.com/file/d/11AsWprsd6sJCRqBd8UyoBDwTh2FEx0Ya/view?usp=sharing",
+                "_blank",
               )
             }
           >
@@ -143,13 +143,13 @@ const Resume = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="space-y-8">
           {/* Experience & Education */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="space-y-8">
             <div className="animate-slide-up">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <Calendar className="h-6 w-6 mr-2 text-primary" />
-                Work Experience
+                <Calendar className="h-6 w-6 mr-2 text-primary" /> Work
+                Experience
               </h3>
               <div className="space-y-6">
                 {experiences.map((exp, index) => (
@@ -228,54 +228,6 @@ const Resume = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Skills */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
-            <Card className="gradient-card ">
-              {/* <CardHeader>
-                <CardTitle className="text-2xl">
-                  Skills & Technologies
-                </CardTitle>
-              </CardHeader> */}
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <h3 className="text-2xl font-bold mb-6">Achievements</h3>
-
-            <Card className="gradient-card shadow-card border-border/50 ">
-              {/* <CardHeader>
-                <CardTitle className="text-2xl">
-                  Skills & Technologies
-                </CardTitle>
-              </CardHeader> */}
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {achievements.map((achievement, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
-                    >
-                      {achievement}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

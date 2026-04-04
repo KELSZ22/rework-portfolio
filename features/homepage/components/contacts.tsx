@@ -170,45 +170,18 @@ const Contact = () => {
                 </Card>
               ))}
             </div>
-
-            <div className="pt-6">
-              <h4 className="font-medium mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="hover:shadow-glow transition-smooth"
-                >
-                  <Mail className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="hover:shadow-glow transition-smooth"
-                >
-                  <Phone className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="hover:shadow-glow transition-smooth"
-                >
-                  <MapPin className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
           <div
-            className={`transition-all duration-700 ${
+            className={`flex w-full min-w-0 items-end transition-all duration-700 ${
               isVisible
                 ? "animate-fade-in opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
             style={{ animationDelay: "0.3s" }}
           >
-            <Card className="gradient-card shadow-card border-border/50">
+            <Card className="gradient-card w-full min-w-0 border-border/50 shadow-card">
               <CardHeader>
                 <CardTitle className="text-2xl">Send a Message</CardTitle>
               </CardHeader>
@@ -248,7 +221,7 @@ const Contact = () => {
                     </DialogFooter>
                   </DialogContent>
                 </Dialog>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="w-full space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">First Name</label>
@@ -321,7 +294,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={!isValid || status.state === "submitting"}
-                    className="w-full gradient-primary text-primary-foreground shadow-hero hover:shadow-glow transition-smooth disabled:opacity-60"
+                    className="flex w-full gradient-primary text-primary-foreground shadow-hero transition-smooth hover:shadow-glow disabled:opacity-60"
                   >
                     <Send className="h-4 w-4 mr-2" />
                     {status.state === "submitting"

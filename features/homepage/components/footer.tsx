@@ -1,10 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
 
   return (
     <footer className="bg-secondary/50 border-t border-border/50">
@@ -12,11 +16,37 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Michael Z. Sabino</h3>
-            <p className="text-muted-foreground">
-              Computer Engineering graduate & Full Stack Developer passionate
-              about creating innovative web solutions and digital experiences.
-            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+              <Link
+                href="/"
+                onClick={(e) => {
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    document
+                      .getElementById("home")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="shrink-0 self-start"
+                prefetch={false}
+              >
+                <Image
+                  src="/icon/kelsz.dev.png"
+                  alt="kelsz.dev logo"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14"
+                />
+                <span className="sr-only">kelsz.dev</span>
+              </Link>
+              <div className="min-w-0 space-y-4">
+                <h3 className="text-2xl font-bold">Michael Z. Sabino</h3>
+                <p className="text-muted-foreground">
+                  Computer Engineering graduate & Full Stack Developer passionate
+                  about creating innovative web solutions and digital experiences.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -60,27 +90,64 @@ const Footer = () => {
               <p className="text-muted-foreground">
                 Let&apos;s work together on your next project
               </p>
-              <div className="flex space-x-3">
+              <div className="flex flex-wrap gap-3">
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
-                  className="hover:shadow-glow transition-smooth"
+                  className="h-12 w-12 rounded-full border border-primary/20 transition-smooth hover:scale-110 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+                  onClick={() =>
+                    window.open("https://github.com/KELSZ22", "_blank")
+                  }
                 >
-                  <Github className="h-4 w-4" />
+                  <Github className="h-6 w-6" />
+                  <span className="sr-only">GitHub</span>
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
-                  className="hover:shadow-glow transition-smooth"
+                  className="h-12 w-12 rounded-full border border-primary/20 transition-smooth hover:scale-110 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/michael-sabino-b0bab02b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                      "_blank",
+                    )
+                  }
                 >
-                  <Linkedin className="h-4 w-4" />
+                  <Linkedin className="h-6 w-6" />
+                  <span className="sr-only">LinkedIn</span>
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
-                  className="hover:shadow-glow transition-smooth"
+                  className="h-12 w-12 rounded-full border border-primary/20 transition-smooth hover:scale-110 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+                  onClick={() =>
+                    (window.location.href = "mailto:michaels6355@gmail.com")
+                  }
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-6 w-6" />
+                  <span className="sr-only">Email</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-12 w-12 rounded-full border border-primary/20 transition-smooth hover:scale-110 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+                  onClick={() =>
+                    window.open("https://www.facebook.com/Kelsz0910/", "_blank")
+                  }
+                >
+                  <Facebook className="h-6 w-6" />
+                  <span className="sr-only">Facebook</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-12 w-12 rounded-full border border-primary/20 transition-smooth hover:scale-110 hover:border-primary/60 hover:bg-primary/10 hover:shadow-glow"
+                  onClick={() =>
+                    window.open("https://www.instagram.com/kel_sz7/", "_blank")
+                  }
+                >
+                  <Instagram className="h-6 w-6" />
+                  <span className="sr-only">Instagram</span>
                 </Button>
               </div>
             </div>

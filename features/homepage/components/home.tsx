@@ -1,5 +1,6 @@
 import React from "react";
 import { About, Contact, Footer, HeroSection, Projects, Resume } from ".";
+import ResumeV2 from "../../resume-v2";
 
 function Home() {
   return (
@@ -7,7 +8,7 @@ function Home() {
       <HeroSection />
       <About />
       <Projects />
-      <Resume />
+      <ResumeV2 />
       <Contact />
       <Footer />
     </div>

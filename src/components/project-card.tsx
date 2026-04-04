@@ -81,7 +81,7 @@ export function ProjectCard({
       <Card
         className={cn(
           "group overflow-hidden hover:shadow-2xl transition-all duration-300",
-          className
+          className,
         )}
       >
         {/* Image Section */}
@@ -155,7 +155,9 @@ export function ProjectCard({
               </Badge>
             )}
           </div>
-          <p className="text-muted-foreground">{project.description}</p>
+          <p className="text-muted-foreground line-clamp-4">
+            {project.description}
+          </p>
         </CardHeader>
 
         {/* Card Content */}
