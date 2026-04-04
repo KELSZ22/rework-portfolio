@@ -112,7 +112,6 @@ interface ResumeTimelineProps {
   items: TimelineItem[];
   title: string;
   subtitle?: string;
-  accentColor: string;
 }
 
 function TimelineNode({ color }: { color: string }) {
