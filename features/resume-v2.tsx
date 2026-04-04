@@ -58,14 +58,14 @@ const WORK_DATA: TimelineItem[] = [
   },
   {
     id: "w3",
-    year: "2020",
+    year: "2023",
     title: "Intern Java Developer",
     description: "Intellyx ICT · Philippines",
     color: "bg-sky-600",
   },
   {
     id: "w4",
-    year: "2020",
+    year: "2019",
     title: "Intern Software Developer",
     description: "First Academy of Computer Arts · Philippines",
     color: "bg-cyan-600",
@@ -75,7 +75,7 @@ const WORK_DATA: TimelineItem[] = [
 const EDUCATION_DATA: TimelineItem[] = [
   {
     id: "e1",
-    year: "2021",
+    year: "2024",
     title: "Bachelor of Science in Computer Engineering",
     description: "Universidad De Manila · Philippines",
     color: "bg-cyan-600",
@@ -89,7 +89,7 @@ const EDUCATION_DATA: TimelineItem[] = [
   },
   {
     id: "e3",
-    year: "2022",
+    year: "2023-2024",
     title: "Java NC III, UI & UX Design (TESDA)",
     description:
       "Java Programming NC III; Developing Designs for User Interface and User Experience — TESDA (Technical Education and Skills Development Authority) · Philippines",
@@ -106,7 +106,7 @@ const EDUCATION_DATA: TimelineItem[] = [
 ];
 
 const PDF_URL =
-  "https://drive.google.com/file/d/11AsWprsd6sJCRqBd8UyoBDwTh2FEx0Ya/view?usp=sharing";
+  "https://drive.google.com/file/d/1C4SityJQXc0Em4dQErThGPWMR9QqF14l/view?usp=sharing";
 
 interface ResumeTimelineProps {
   items: TimelineItem[];
