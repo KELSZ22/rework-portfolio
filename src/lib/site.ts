@@ -14,5 +14,8 @@ export const siteName = "Michael Z. Sabino";
 // Shorter name for document title, Open Graph, and Twitter title tags
 export const siteTitleBrand = "Michael Sabino";
 
+/** Public site hostname (search + schema); keep in sync with production URL */
+export const siteDomain = "kelsz.dev";
+
 export const defaultDescription =
-  "Full stack developer portfolio — projects, services, blog, and creative work by Michael Z. Sabino.";
+  `Full stack developer portfolio at ${siteDomain} — projects, services, blog, and creative work by Michael Z. Sabino.`;
