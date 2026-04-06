@@ -3,7 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/nav-bar";
 import { ToastProvider } from "@/components/ui/toast";
-import { defaultDescription, getSiteUrl, siteName } from "@/lib/site";
+import {
+  defaultDescription,
+  getSiteUrl,
+  siteName,
+  siteTitleBrand,
+} from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,8 +43,8 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: `${siteName} — Portfolio`,
-    template: `%s | ${siteName}`,
+    default: `${siteTitleBrand} | Portfolio`,
+    template: `%s | ${siteTitleBrand}`,
   },
   description: defaultDescription,
   keywords: [
@@ -62,12 +67,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl.origin,
     siteName,
-    title: `${siteName} — Portfolio`,
+    title: `${siteTitleBrand} | Portfolio`,
     description: defaultDescription,
   },
   twitter: {
     card: "summary",
-    title: `${siteName} — Portfolio`,
+    title: `${siteTitleBrand} | Portfolio`,
     description: defaultDescription,
   },
   robots: {

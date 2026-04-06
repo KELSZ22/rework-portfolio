@@ -11,5 +11,8 @@ export function getSiteUrl(): URL {
 
 export const siteName = "Michael Z. Sabino";
 
+// Shorter name for document title, Open Graph, and Twitter title tags
+export const siteTitleBrand = "Michael Sabino";
+
 export const defaultDescription =
   "Full stack developer portfolio — projects, services, blog, and creative work by Michael Z. Sabino.";

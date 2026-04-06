@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteName } from "@/lib/site";
+import { siteTitleBrand } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
   openGraph: {
     url: "/services",
-    title: `Services | ${siteName}`,
+    title: `Services | ${siteTitleBrand}`,
     description:
       "Professional web development services including React, Next.js, responsive design, and performance optimization.",
   },
