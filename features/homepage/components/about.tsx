@@ -42,6 +42,7 @@ const About = () => {
         "JavaScript",
         "HTML5",
         "CSS",
+        "Shopify",
       ],
     },
     {
