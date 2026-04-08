@@ -63,18 +63,25 @@ export const projects: Project[] = [
     live: "#",
     requiresCredentials: true,
   },
-  // {
-  //   id: 1,
-  //   title: "Pasadax Application",
-  //   description:
-  //     "Pasadax is a mobile transportation app designed for tricycles, offering a convenient and reliable way for passengers to book rides—similar to Grab, but built specifically for local tricycle services.",
-  //   longDescription:
-  //     "A fully featured mobile application built with React Native. Features include user authentication, real-time updates, offline functionality, push notifications, and smooth animations. The app provides an excellent user experience with responsive design and optimized performance.",
-  //   image: "/app-images/pasadax.png",
-  //   technologies: ["React Native"],
-  //   category: "Mobile Development",
-  //   live: "https://pasadax.mytao.id/",
-  // },
+  {
+    id: 1,
+    title: "Cafe POS App",
+    description:
+      "Cafe POS App is a point of sale system for a cafe, offering a convenient and reliable way for customers to order and pay for their food and drinks.",
+    longDescription:
+      "A fully featured point of sale system built with Laravel Inertia and TypeScript. Features include user authentication, real-time updates, offline functionality, push notifications, and smooth animations. The system provides an excellent user experience with responsive design and optimized performance.",
+    image: "/app-images/cafe-pos.png",
+    technologies: [
+      "Laravel",
+      "Inertia.js",
+      "TypeScript",
+      "React Native",
+      "Tanstack",
+    ],
+    category: "Web Development, Mobile Development",
+    live: "https://cafe-pos-seven.vercel.app/login",
+    requiresCredentials: false,
+  },
   // {
   //   id: 3,
   //   title: "Tinda Plus App",
