@@ -71,13 +71,7 @@ export const projects: Project[] = [
     longDescription:
       "A fully featured point of sale system built with Laravel Inertia and TypeScript. Features include user authentication, real-time updates, offline functionality, push notifications, and smooth animations. The system provides an excellent user experience with responsive design and optimized performance.",
     image: "/app-images/cafe-pos.png",
-    technologies: [
-      "Laravel",
-      "Inertia.js",
-      "TypeScript",
-      "React Native",
-      "Tanstack",
-    ],
+    technologies: ["Laravel", "TypeScript", "React Native", "Tanstack"],
     category: "Web Development, Mobile Development",
     live: "https://cafe-pos-seven.vercel.app/login",
     requiresCredentials: false,
