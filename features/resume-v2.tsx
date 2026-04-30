@@ -106,7 +106,7 @@ const EDUCATION_DATA: TimelineItem[] = [
 ];
 
 const PDF_URL =
-  "https://drive.google.com/file/d/1z7gvTRTA2fjoO5dImaSWtZ229TW984GE/view?usp=sharing";
+  "https://drive.google.com/file/d/13yTV_mJP7tfTVUmOcYTSaJqE_YH4HrtF/view?usp=sharing";
 
 interface ResumeTimelineProps {
   items: TimelineItem[];
